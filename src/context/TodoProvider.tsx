@@ -32,6 +32,7 @@ const TodoProvider = ({ children }: { children: React.ReactNode }) => {
         })
     }
     const editTodo = (id: number, title: string) => {
+        if(title === "") return;
         setTodos((prevTodo) => {
             const updatedTodos = {
                 ...prevTodo,
