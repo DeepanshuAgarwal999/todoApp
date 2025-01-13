@@ -1,9 +1,7 @@
-import React, { useMemo, useState, useEffect } from 'react';
 import { useTodo } from '../context/TodoProvider';
 
 const Filter = () => {
   const { todos, clearCompleted, setFilter, filter, activeTodos } = useTodo();
-
   if (Object.keys(todos).length === 0 && !filter) return null;
 
   return (

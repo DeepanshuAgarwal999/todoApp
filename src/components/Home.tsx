@@ -4,7 +4,6 @@ import CustomInputField from './CustomInputField'
 import Filter from './Filter'
 
 const Home = () => {
-
     return (
         <div className='bg-[#F5F5F5] w-full h-screen'>
             <h1 className='text-6xl font-semibold text-center text-red-700 pt-20'>
@@ -15,8 +14,6 @@ const Home = () => {
                 <TodoList />
                 <Filter />
             </div>
-
-
         </div>
     )
 }

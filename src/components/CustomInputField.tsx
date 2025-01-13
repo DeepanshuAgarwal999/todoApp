@@ -14,7 +14,7 @@ const CustomInputField = ({
   setTodoToEdit,
 }: {
   mode: 'add' | 'edit';
-  todo?: Todo;
+  todo?: Todo | null;
   setTodoToEdit?: React.Dispatch<React.SetStateAction<number | null>>;
 }) => {
   const { addTodo, todos, editTodo, toggleAllTodosStatus } = useTodo();
@@ -22,8 +22,12 @@ const CustomInputField = ({
   const [allTodosStatus, setAllTodosStatus] = React.useState<boolean>(false);
 
   useEffect(() => {
-    if (mode === 'edit' && todo) {
-      setInputValue(todo.title);
+    if (mode === 'edit') {
+      if (todo) {
+        setInputValue(todo.title);
+      } else {
+        setInputValue('');
+      }
     }
   }, [todo]);
 
