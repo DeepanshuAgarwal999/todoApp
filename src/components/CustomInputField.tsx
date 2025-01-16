@@ -38,7 +38,7 @@ const CustomInputField = ({
     if (mode === 'edit') {
       if (!todo) return alert('Task not found');
       editTodo(todo.id, inputValue.trim());
-      setTodoToEdit && setTodoToEdit(null);
+      setTodoToEdit?.(null)
     } else {
       const newTodo = {
         id: Date.now(),
